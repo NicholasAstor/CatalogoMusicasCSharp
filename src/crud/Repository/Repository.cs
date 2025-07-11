@@ -45,4 +45,10 @@ public class Repository<T> where T : Music, IMedia
         
         return null; //fodase pode dar nullpointer
     }
+    
+    public List<T> GetAll()
+    {
+        return Repo;
+    }
+
 }
