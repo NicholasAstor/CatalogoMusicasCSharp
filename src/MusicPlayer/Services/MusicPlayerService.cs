@@ -14,10 +14,10 @@ public class MusicPlayerService: IMusicPlayer
         Music = music;
     }
 
-    public void Play(Music music)
-    {
+    public void Play()
+    { 
         Stop();
-        audioFile = new AudioFileReader(music.FilePath);
+        audioFile = new AudioFileReader(Music.FilePath);
         //audioFile.CurrentTime = music.PreviewStart;
         
         outputDevice = new WaveOutEvent();
@@ -28,6 +28,11 @@ public class MusicPlayerService: IMusicPlayer
     public void Pause()
     {
         outputDevice?.Pause();
+    }
+
+    public void Resume()
+    {
+        outputDevice?.Play();
     }
 
     public void Stop()

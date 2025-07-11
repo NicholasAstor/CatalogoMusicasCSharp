@@ -2,7 +2,8 @@ namespace src.MusicPlayer.Interfaces;
 
 public interface IMusicPlayer
 {
-    void Play(Music music);
+    void Play();
     void Pause();
     void Stop();
+    void Resume();
 }
