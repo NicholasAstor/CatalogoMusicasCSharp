@@ -11,11 +11,12 @@ public abstract class MediaType
 
     public long Length { get; set; } //  Length of an album in seconds
 
-    public MediaType(string year, string name, Author author)
+    public MediaType(string year, string name, Author author, long length)
     {
         Year = year;
         Name = name;
         Author = author;
+        Length = length;
     }
 
     public abstract string ToString();
