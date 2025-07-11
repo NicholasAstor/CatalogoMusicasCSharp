@@ -7,7 +7,7 @@ public class Music
     public long Length { get; }
     public Gender Gender { get; }
     public Author Author { get; }
-    public string FilePath { get; }
+    public string? FilePath { get; }
 
     public Music(string lyrics, string name, long length, Gender gender, Author author, string filePath)
     {
@@ -18,7 +18,4 @@ public class Music
         Author = author;
         FilePath = filePath;
     }
-
-
-
 }
