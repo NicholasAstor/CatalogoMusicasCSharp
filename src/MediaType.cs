@@ -2,9 +2,9 @@ namespace src;
 
 public abstract class MediaType
 {
-    public string? Year { get; }
+    public string Year { get; }
 
-    public string? Name { get; }
+    public string Name { get; }
 
     //duration
     public Author Author { get; } // a person or band
