@@ -13,7 +13,7 @@ public class Music : IMedia
     public Author Author { get; }
     public string? FilePath { get; }
 
-    public Music(string lyrics, string name, long length, Gender gender, Author author)
+    public Music(string lyrics, string name, long length, Gender gender, Author author, string year)
     {
         _lastId++;
         Id = _lastId;
@@ -22,9 +22,10 @@ public class Music : IMedia
         Length = length;
         Gender = gender;
         Author = author;
+        Year = year;
     }
     
-    public Music(string lyrics, string name, long length, Gender gender, Author author, string filePath) 
+    public Music(string lyrics, string name, long length, Gender gender, Author author, string filePath, string year) 
     {
         _lastId++;
         Id = _lastId;
@@ -33,6 +34,7 @@ public class Music : IMedia
         Length = length;
         Gender = gender;
         Author = author;
+        Year = year;
         FilePath = filePath;
     }
 }
