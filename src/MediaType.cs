@@ -1,6 +1,6 @@
 namespace src;
 
-public abstract class MediaType
+public abstract class MediaType : IMedia
 {
     public string Year { get; }
 
