@@ -1,13 +1,14 @@
 namespace src;
 
-public class Music
+public class Music : IMedia
 {
     private static long _lastId = 0;
     
     public long Id { get; }
     public string Lyrics { get; }
     public string Name { get; }
-    public long Length { get; }
+    public string Year { get; }
+    public long Length { get; set; }
     public Gender Gender { get; }
     public Author Author { get; }
     public string? FilePath { get; }
