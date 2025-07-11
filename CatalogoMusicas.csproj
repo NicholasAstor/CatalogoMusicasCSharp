@@ -12,7 +12,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="src\songs\" />
+      <Folder Include="src\MusicPlayer\songs\" />
     </ItemGroup>
 
 </Project>
