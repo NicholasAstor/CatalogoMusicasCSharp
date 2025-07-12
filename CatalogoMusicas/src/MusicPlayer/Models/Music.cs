@@ -8,7 +8,7 @@ public class Music : IMedia
     public string Lyrics { get; }
     public string Name { get; }
     public string Year { get; }
-    public long Length { get; set; }
+    public string Length { get; set; }
     public Gender Gender { get; }
     public Author Author { get; }
     public string? FilePath { get; }
@@ -19,7 +19,7 @@ public class Music : IMedia
         Id = _lastId;
         Lyrics = lyrics;
         Name = name;
-        Length = length;
+        Length = TransformLengthToTheRightFormat(length);
         Gender = gender;
         Author = author;
         Year = year;
@@ -31,10 +31,22 @@ public class Music : IMedia
         Id = _lastId;
         Lyrics = lyrics;
         Name = name;
-        Length = length;
+        Length = TransformLengthToTheRightFormat(length);
         Gender = gender;
         Author = author;
         Year = year;
         FilePath = filePath;
+    }
+
+    private string TransformLengthToTheRightFormat(long seconds)
+    {
+        long minutes = seconds / 60;
+        seconds %= 60;
+        return $"{minutes}:{seconds}";
+    }
+
+    public override string ToString()
+    {
+        return $"ID: {Id} | Nome: {Name} | Ano: {Year} | Autor: {Author.Name} | Gênero: {Gender} | Duração: {Length}";
     }
 }
