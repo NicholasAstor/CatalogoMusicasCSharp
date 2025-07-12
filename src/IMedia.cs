@@ -8,5 +8,5 @@ public interface IMedia
 
     public Author Author { get; } 
 
-    public long Length { get; set; } 
+    public string Length { get; set; } 
 }

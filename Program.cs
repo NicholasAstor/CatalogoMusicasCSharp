@@ -66,7 +66,7 @@ class Program
                     BuscarPorNome();
                     break;
                 case "4":
-                    BuscarPorAutor();
+                    BuscarPorCantor();
                     break;
                 case "5":
                     ListarMusicas();
@@ -132,7 +132,7 @@ class Program
         Console.Write("Descrição do autor: ");
         string descricao = Console.ReadLine();
 
-        Console.WriteLine("Gênero: Jazz, Pagode, Rock, Pop, Sertanejo, Reagge, Reggaton, Classic, Blues, Rap, Funk");
+        Console.WriteLine("Gêneros: Jazz, Pagode, Rock, Pop, Sertanejo, Reagge, Reggaton, Classic, Blues, Rap, Funk");
         Console.Write("Escolha o gênero: ");
         string generoStr = Console.ReadLine();
         Gender genero;
@@ -153,6 +153,7 @@ class Program
     static void ListarMusicas()
     {
         Console.WriteLine("=== Lista de Músicas ===");
+        
         foreach (var musica in musicRepo.GetAll())
         {
             MostrarMusica(musica);
@@ -164,19 +165,19 @@ class Program
         Console.Write("Nome da música: ");
         string nome = Console.ReadLine();
 
-        var musica = musicRepo.GetByName(nome);
+        var musica = musicRepo.GetByName(nome.ToLower());
         if (musica != null)
             MostrarMusica(musica);
         else
             Console.WriteLine("Música não encontrada.");
     }
 
-    static void BuscarPorAutor()
+    static void BuscarPorCantor()
     {
-        Console.Write("Nome do autor: ");
+        Console.Write("Nome do cantor: ");
         string nome = Console.ReadLine();
 
-        var musicas = musicRepo.GetByAuthor(nome);
+        var musicas = musicRepo.GetByAuthor(nome.ToLower());
         if (musicas.Count > 0)
             musicas.ForEach(MostrarMusica);
         else
@@ -230,7 +231,7 @@ class Program
     static void MostrarMusica(Music musica)
     {
         string tocavel = musica.FilePath != null ? "[Tocável]" : "[Não tocável]";
-        Console.WriteLine($"ID: {musica.Id} | Nome: {musica.Name} | Ano: {musica.Year} | Autor: {musica.Author.Name} | Gênero: {musica.Gender} | Duração: {musica.Length}s {tocavel}");
+        Console.WriteLine($"{musica.ToString()} - {tocavel}");
     }
 
 }
