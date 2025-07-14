@@ -10,19 +10,17 @@ class Program
 
     static void Main(string[] args)
     {
+        string path = Directory.GetCurrentDirectory();
         Author justinBieber = new Author("Justin Bieber", "Canadense", false, "Cantor pop canadense");
-        string babyPath = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName;
-        string filePath = Path.Combine(babyPath, "src", "MusicPlayer", "songs", "baby.mp3");        
+        string filePath = Path.Combine(path, "src", "MusicPlayer", "songs", "baby.mp3");        
         Music baby = new Music("", "Baby", 210, Gender.Pop, justinBieber, filePath, "2010");
         
         Author fiftyCent = new Author("50 Cent", "Americano", false, "Rapper americano");
-        string pimpPath = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName;
-        string filePathPimp = Path.Combine(pimpPath, "src", "MusicPlayer", "songs", "pimp.mp3");
+        string filePathPimp = Path.Combine(path, "src", "MusicPlayer", "songs", "pimp.mp3");
         Music pimp = new Music("", "P.I.M.P", 298, Gender.Rap, fiftyCent, filePathPimp, "2003");
         
         Author brunoEMarrone = new Author("Bruno & Marrone", "Brasileiros", true, "Dupla sertaneja");
-        string bijuteriaPath = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName;
-        string filePathBijuteria = Path.Combine(bijuteriaPath, "src", "MusicPlayer", "songs", "bijuteria.mp3");
+        string filePathBijuteria = Path.Combine(path, "src", "MusicPlayer", "songs", "bijuteria.mp3");
         Music bijuteria = new Music("", "Bijuteria", 252, Gender.Sertanejo, brunoEMarrone, filePathBijuteria, "2001");
 
 
